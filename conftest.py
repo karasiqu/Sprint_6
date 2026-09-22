@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 
-from data import BASE_URL
+from urls import BASE_URL
 
 
 @pytest.fixture

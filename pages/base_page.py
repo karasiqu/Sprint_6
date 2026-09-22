@@ -28,3 +28,21 @@ class BasePage:
             self.wait.until(EC.element_to_be_clickable(BaseLocators.COOKIE_BUTTON)).click()
         except Exception:
             pass
+
+    def scroll_to_element(self, locator):
+        element = self.find(locator)
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center'});", element
+        )
+
+    def switch_to_new_window(self):
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+
+    def get_current_url(self):
+        return self.driver.current_url
+
+    def wait_for_url_contains(self, substring, timeout=10):
+        WebDriverWait(self.driver, timeout).until(
+            lambda d: substring in d.current_url
+        )
+        

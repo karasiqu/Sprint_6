@@ -16,3 +16,4 @@ class TestFaq:
         page.click_faq_question(num)
 
         assert expected_answer in page.get_faq_answer_text(num)
+        

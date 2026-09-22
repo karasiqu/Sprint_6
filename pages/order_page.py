@@ -39,3 +39,4 @@ class OrderPage(BasePage):
 
     def is_order_success(self):
         return self.is_visible(OrderPageLocators.SUCCESS_HEADER)
+    

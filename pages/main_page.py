@@ -9,10 +9,7 @@ class MainPage(BasePage):
             MainPageLocators.FAQ_QUESTION[0],
             MainPageLocators.FAQ_QUESTION[1].format(num=num),
         )
-        element = self.find(locator)
-        self.driver.execute_script(
-            "arguments[0].scrollIntoView({block: 'center'});", element
-        )
+        self.scroll_to_element(locator)
 
     def click_faq_question(self, num):
         locator = (
@@ -40,6 +37,4 @@ class MainPage(BasePage):
 
     def click_yandex_logo(self):
         self.click(MainPageLocators.YANDEX_LOGO)
-
-    def switch_to_new_window(self):
-        self.driver.switch_to.window(self.driver.window_handles[-1])
+        

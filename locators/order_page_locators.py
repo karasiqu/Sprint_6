@@ -19,3 +19,4 @@ class OrderPageLocators:
 
     CONFIRM_BUTTON = (By.XPATH, "//div[contains(@class, 'Order_Modal')]//button[text()='Да']")
     SUCCESS_HEADER = (By.XPATH, "//div[contains(text(), 'Заказ оформлен')]")
+    
